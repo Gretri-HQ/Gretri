@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0b0b0f;
+    color: #e6e6e6;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    background: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(11, 11, 15, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-cta {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    transition: 0.3s;
+}
+
+.nav-cta:hover {
+    background: #fff;
+    color: #000;
+}
+
+section {
+    padding: 120px 8%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid #444;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.cta-button.secondary {
+    margin-top: 20px;
+}
+
+.about, .product {
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.features {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    opacity: 0.5;
+}
+
+/* Reveal Animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    section {
+        padding: 100px 5%;
+    }
+}
